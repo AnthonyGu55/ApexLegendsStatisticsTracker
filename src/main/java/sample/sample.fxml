@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane id="main_pane" fx:id="main_pane" stylesheets="@../../resources/FlatBee.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox id="input_panel" spacing="10.0">
+               <children>
+                  <ChoiceBox id="hero_name_box" fx:id="hero_name_box" prefWidth="150.0" />
+                  <TextField id="damage_field" fx:id="damage_field" promptText="Damage" />
+                  <TextField id="kills_field" fx:id="kills_field" layoutX="160.0" layoutY="10.0" promptText="Kills" />
+                  <TextField id="position_field" fx:id="position_field" layoutX="309.0" layoutY="10.0" promptText="Position" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+               </padding>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" spacing="10.0">
+               <children>
+                  <Button fx:id="add_button" mnemonicParsing="false" text="Add" />
+                  <Button fx:id="remove_button" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Remove" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <bottom>
+      <TableView id="table" fx:id="table" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn id="hero_name_column" fx:id="hero_name_column" minWidth="-1.0" prefWidth="75.0" text="Hero" />
+          <TableColumn id="damage_column" fx:id="damage_column" prefWidth="75.0" text="Damage" />
+            <TableColumn fx:id="kills_column" prefWidth="75.0" text="Kills" />
+            <TableColumn fx:id="position_column" prefWidth="75.0" text="Position" />
+        </columns>
+      </TableView>
+   </bottom>
+   <center>
+      <LineChart id="line_chart" fx:id="line_chart" animated="false" legendSide="TOP" legendVisible="false" title="Damage" BorderPane.alignment="CENTER">
+        <xAxis>
+          <NumberAxis id="x_Axis" side="BOTTOM" fx:id="x_Axis" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis id="y_Axis" fx:id="y_Axis" side="LEFT" />
+        </yAxis>
+      </LineChart>
+   </center>
+</BorderPane>
